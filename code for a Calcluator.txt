@@ -1,0 +1,163 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main (String[]args){
+        
+    Scanner scnr = new Scanner(System.in);
+    String typecalc;
+    String operation;
+    String answer;
+    int numOp;
+    double opNum1;
+    double opNum2;
+
+    double k = 0;
+    int i;
+    double u = 1;
+    
+    do{
+        System.out.println("Enter the calculator mode: Standard/Scientific?");
+        typecalc = scnr.next();
+        if(typecalc.equals("Standard")){
+            
+            System.out.println("The calculator will operate in standard mode.");
+            System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division");
+     //If the above code is invalid then make a loop or a if stament to have it repeat itself untill its vaild
+            operation = scnr.next();
+    //
+            if(operation.equals("+")){
+                System.out.println("How many numbers do you want to add ?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+                for(i= 1; i<= numOp; ++i){
+                    opNum1 = scnr.nextDouble();
+                    k = opNum1 + k;
+                }
+                System.out.println("Result: " + k);
+                k=0;
+            }
+            else if(operation.equals("-")){
+                System.out.println("How many numbers do you want to subtract?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+
+                opNum2 = scnr.nextDouble();
+                for( i = 1; numOp - 1 >= i; i++){
+                    opNum1 = scnr.nextDouble();
+                    opNum2 = opNum2 - opNum1;
+                }
+                System.out.println("Result: " + opNum2);
+            }
+            else if(operation.equals("*")){
+                System.out.println("How many numbers do you want to multiply ?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+
+                for(i= 1; i<= numOp; ++i){
+                    opNum1 = scnr.nextDouble();
+                    u = opNum1 * u;
+                }
+                System.out.println("Result: " + u); 
+            }
+            else if(operation.equals("/")){
+                System.out.println("How many numbers do you want to divide ?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+                opNum2 = scnr.nextDouble();
+                for(i= 1; i<= numOp-1; ++i){
+                    opNum1 = scnr.nextDouble();
+                    opNum2 = opNum2 / opNum1;
+                }
+                System.out.println("Result: " + opNum2);
+            }
+        
+            System.out.println("Do you want to start over? (Y/N)");
+            answer = scnr.next();
+            if(answer.equals("Y")){
+    
+            }
+            if(answer.equals("N")){
+                System.out.println("Goodbye");
+            }
+        }
+        else{
+            System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division, 'sin' for sin x, 'cos' for cos x, 'tan' for tan x:");
+            operation = scnr.next();
+         
+            if(operation.equals("+")){
+                System.out.println("How many numbers do you want to add ?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+                for(i= 1; i<= numOp; ++i){
+                    opNum1 = scnr.nextDouble();
+                    k = opNum1 + k;
+                }
+                System.out.println("Result: " + k);
+                k=0;
+            }
+            else if(operation.equals("-")){ 
+                System.out.println("How many numbers do you want to subtract?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+                opNum2 = scnr.nextDouble();
+                for( i = 1; numOp - 1 >= i; i++){
+                    opNum1 = scnr.nextDouble();
+                    opNum2 = opNum2 - opNum1;
+                }
+                System.out.println("Result: " + opNum2);
+            }
+            else if(operation.equals("*")){
+                System.out.println("How many numbers do you want to multiply ?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+                for(i= 1; i<= numOp; ++i){
+                    opNum1 = scnr.nextDouble();
+                    u = opNum1 * u;
+                }
+                System.out.println("Result: " + u); 
+                u=1;
+            }
+            else if(operation.equals("/")){
+                System.out.println("How many numbers do you want to divide ?");
+                numOp = scnr.nextInt();
+                System.out.println("Enter " + numOp + " numbers");
+                opNum2 = scnr.nextDouble();
+                for(i= 1; i<= numOp-1; ++i){
+                    opNum1 = scnr.nextDouble();
+                    opNum2 = opNum2 / opNum1;
+                }
+                System.out.println("Result: " + opNum2);
+            }
+            else if (operation.equals("sin")){
+                System.out.println("Enter a number in radians to find the sine");
+                opNum1 = scnr.nextDouble();
+                opNum1 = Math.sin(opNum1);
+                System.out.println("Result: " + opNum1);
+            }
+            else if (operation.equals("cos")){
+                System.out.println("Enter a number in radians to find the cosine");
+                opNum1 = scnr.nextDouble();
+                opNum1 = Math.cos(opNum1);
+                System.out.println("Result: " + opNum1);
+            }
+            else if (operation.equals("tan")){
+                System.out.println("Enter a number in radians to find the tangent");
+                opNum1 = scnr.nextDouble();
+                opNum1 = Math.tan(opNum1);
+                System.out.println("Result: " + opNum1);
+            }
+            System.out.println("Do you want to start over? (Y/N)");
+            answer = scnr.next();
+            if(answer.equals("Y")){
+    
+            }
+            if(answer.equals("N")){
+                System.out.println("Goodbye");
+            }
+        }
+    
+    }while(answer.equals("Y"));
+    
+    
+    }
+}
